@@ -1,0 +1,11 @@
+<launch>
+
+	<node pkg="image_transport" type="republish" name="republisher" required="true" args="compressed raw">
+		<remap from="in/compressed" to="/webcam/image_raw/compressed"/>
+		<remap from="out" to="/image"/>
+	</node>
+	
+	<node pkg="tutorial_pkg" type="YOLOtracker.py" name="YOLOtracker">
+	</node>
+	
+</launch>
